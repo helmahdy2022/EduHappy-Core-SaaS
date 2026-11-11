@@ -1,0 +1,422 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Edit Teacher</title>  
+ <script type="application/javascript" src="${pageContext.request.contextPath}/Global/lib/exif.js"></script>  
+ <script type="application/javascript" src="${pageContext.request.contextPath}/Global/lib/ProcessPhoto.js"></script> 
+
+<meta charset="utf-8">
+ <script>
+ 
+ function showDeleteMessage()
+ {
+
+		  if (window.XMLHttpRequest)
+		    {// code for IE7+, Firefox, Chrome, Opera, Safari
+		    xmlhttp=new XMLHttpRequest();
+		    }
+		  else
+		    {// code for IE6, IE5
+		    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+		    }
+		  xmlhttp.onreadystatechange=function()
+		    {
+		       if (xmlhttp.readyState==4 && xmlhttp.status==200)
+     {
+	  sessionExpired();
+		      document.getElementById("DeleteMessage").innerHTML=xmlhttp.responseText;
+		      //document.getElementById("OneSession").innerHTML="";
+		      }
+		    };
+		  xmlhttp.open("GET","${pageContext.request.contextPath}/Global/DeleteMessage.jsp",true);
+		  xmlhttp.send();
+
+ }
+ function cancelDelete()
+ {
+     document.getElementById("DeleteMessage").innerHTML= "";
+
+ }
+
+ function getCheckedBoxes(school) {
+	 var checkboxes = document.getElementsByClassName(school);
+	 var checkboxesChecked = [];
+	 // loop over them all
+	 for (var i=0; i<checkboxes.length; i++) {
+	    // And stick the checked ones onto an array...
+	    if (checkboxes[i].checked) {
+	       checkboxesChecked.push(checkboxes[i]);
+	    }
+	 }
+	 // Return the array if it is non-empty, or null
+	 return checkboxesChecked.length > 0 ? checkboxesChecked : null;
+	 }
+
+ function validateSchoolCheckbox()
+ {
+	
+	 var checkedBoxes = getCheckedBoxes("school");
+	 if(checkedBoxes==null)
+		 {
+		 	document.getElementById("validateMessage").innerHTML="<font color='red'>Please select at least one school</font>";
+		 	return false;
+		 }
+	 else
+		 {
+		 	document.getElementById("validateMessage").innerHTML="";
+		 }
+		 
+ }
+ 
+ function photoOnPageLoad()
+ {
+	  document.getElementById('custom-file-upload').style.backgroundImage ='url("${pageContext.request.contextPath}/uploadfiles/Accounts/${Teacher_Details.account_id}/Teachers/Photos/${param.Teacher_id}/${Teacher_Details.fileName}")';
+ }
+ 
+ function uploadPhoto(){               
+	 	 
+	 	var formData = new FormData(document.getElementsByName('form1')[0]);      
+     formData.append("Teacher_Photo1", resized_image);  
+     var frm = $('#form1');
+         $.ajax({
+             type: "POST",
+             url: "${pageContext.request.contextPath}/Manage_Teacher",
+             data: formData,
+             processData: false,
+             contentType: false,
+         });
+}
+
+ function deleteFile(File_id, Teacher_id, File_Name, Account_id, School_id)
+ {
+ if (Teacher_id=="" && File_Name=="")
+   {
+   document.getElementById("Photo").innerHTML="";
+   return;
+   } 
+ if (window.XMLHttpRequest)
+   {// code for IE7+, Firefox, Chrome, Opera, Safari
+   xmlhttp=new XMLHttpRequest();
+   }
+ else
+   {// code for IE6, IE5
+   xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+   }
+ xmlhttp.onreadystatechange=function()
+   {
+      if (xmlhttp.readyState==4 && xmlhttp.status==200)
+     {
+	  sessionExpired();
+
+   	resized_image = "";
+   	document.getElementById("Photo").style="display:none";
+   	document.getElementById("RemovePhoto").style="display:none";
+ 	  document.getElementById('custom-file-upload').style.backgroundImage = 'url("${pageContext.request.contextPath}/images/Add_Photo.jpg")';;
+     }
+   };
+ xmlhttp.open("GET","${pageContext.request.contextPath}/Delete_File?File_id="+File_id+"&&File_Name="+File_Name+"&&Account_id="+Account_id+"&&School_id="+School_id+"&&EntityIdName=Teacher_id&&Entity_id="+Teacher_id+"&&Directory=Teachers", true);
+ xmlhttp.send();
+ }
+
+ 
+ 
+ function checkUsername(Username, Current_Username)
+ {
+ if (Username=="")
+   {
+	   document.getElementById("UsernameMsg").innerHTML="";
+   return;
+   } 
+ if (window.XMLHttpRequest)
+   {// code for IE7+, Firefox, Chrome, Opera, Safari
+   xmlhttp=new XMLHttpRequest();
+   }
+ else
+   {// code for IE6, IE5
+   xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+   }
+ xmlhttp.onreadystatechange=function()
+   {
+      if (xmlhttp.readyState==4 && xmlhttp.status==200)
+     {
+     document.getElementById("UsernameMsg").innerHTML=xmlhttp.responseText;
+     }
+   };
+if(Username!=Current_Username)
+	{
+	 	xmlhttp.open("GET","${pageContext.request.contextPath}/Check_Username?Username="+Username,true);
+	 	xmlhttp.send();
+	}
+else
+	{
+		var formData = document.forms['form1'];
+	    var input = document.createElement('input');
+	    input.type = 'hidden';
+	    input.name = 'OkToSubmit';
+	    input.id = 'OkToSubmit';
+	    input.value = 'OK';
+	    formData.appendChild(input);
+	}
+ }
+ </script>
+</head>
+
+<body
+<c:if test="${not empty Teacher_Details.fileName}">
+onLoad=photoOnPageLoad();
+</c:if>
+>
+<div>
+	<%@include file="../includes/AdminMenu.jsp" %> 
+</div>
+	<div class="leftContent"><%@include file="../includes/AdminLeft.jsp" %> </div>
+	<div  id="content">
+		<!--breadcrumbs-->
+		<div id="content-header">
+		  <div id="breadcrumb"> <a href="${pageContext.request.contextPath}/Admin/Admin_Main.jsp" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a> <a href="#" class="tip-bottom">Teachers</a> <a href="${pageContext.request.contextPath}/Admin/Teachers/Search_Teacher.jsp" class="current">Edit Teacher</a> </div>
+		  <h1>Edit Teacher</h1>
+		</div>
+		<!--End-breadcrumbs-->	
+		<div class="container-fluid">
+		  <hr>
+		  <div class="row-fluid">
+		    <div class="span6">
+		      <div class="widget-box">
+		        <div class="widget-title"> <span class="icon"> <i class="icon-align-justify"></i> </span>
+		          <h5>Edit Teacher</h5>
+		        </div>
+		        <div class="widget-content nopadding">
+    			<form name="form1" method="post" id="form1" class="form-horizontal" action="${pageContext.request.contextPath}/Manage_Teacher">
+		            <div class="control-group">
+					  <label class="control-label">Teacher Photo</label>
+		              <div class="controls">		                 
+						<div id="spinner"> </div>
+						 <canvas id="canvas" width="200" height="200" style="border: 1px solid #ccc; display:none;"></canvas>			
+						<label id="custom-file-upload">			   
+						  <img id="Photo" name="Photo" width="200px" style="display:none;"/>			  
+						   <input type="file" name="Entity_Photo" id="Entity_Photo" class="upload" onchange="readImage();">	   					   
+						</label>
+						<br>
+						<div style="text-align:center; width:200px;">			
+						<a href="#" id="RemovePhoto" onclick="deleteFile(${Teacher_Details.teacher_id}, ${Teacher_Details.teacher_id}, '${Teacher_Details.fileName}', ${Teacher_Details.account_id}, ${Teacher_Details.school_id});">
+						<c:if test="${not empty Teacher_Details.fileName}">
+							Remove Photo
+						</c:if>
+						</a>
+						</div>			
+
+					  </div>
+		            </div>	
+		            <div class="control-group">
+					  <label class="control-label">School Name *</label>
+		              <div class="controls"> 								              
+						  <c:forEach items="${Schools.school_id}" var="School_id" varStatus="position">
+					       	<input type="checkbox" name="school${School_id}" id="School" class="school" value="${School_id}"
+								<c:forEach items="${Teacher_Details.school_id}" var="Teacher_School_id" varStatus="index">
+						       		<c:if test="${Teacher_School_id==School_id}">
+					       			Checked
+					       		   </c:if>
+				       		    </c:forEach>
+					       	> <c:out value='${Schools.school_Name[position.index]}'/>
+					      <br>
+					      	<input type="hidden" name="hiddenschool${School_id}"  id="hiddenschool${School_id}" value="${School_id}">  
+					      </c:forEach>
+					       <div id="validateMessage"></div>   
+					  </div>
+		            </div>	            
+					<div class="control-group">
+					  <label class="control-label">First Name *</label>
+		              <div class="controls">	
+           				<input type="text" name="First_Name" id="First_Name" class="span11" required  maxlength="50" value="<c:out value='${Teacher_Details.first_Name}'/>">           							
+ 					  </div>
+ 					</div>
+ 					<div class="control-group">
+					  <label class="control-label">Last Name *</label>
+		              <div class="controls">   
+            			<input type="text" name="Last_Name" id="Last_Name" class="span11" required  maxlength="50" value="<c:out value='${Teacher_Details.last_Name}'/>">            			         							
+ 					  </div>
+ 					</div>
+  					<div class="control-group">
+					  <label class="control-label">Country of Nationality*</label>
+		              <div class="controls">								  
+						 <select name="Country_id" id="Country_id" class="span11" required>
+						  <option value=""> 
+						  	Select Country
+						  </option>
+						  <c:forEach items="${Countries.country_id}" var="Country_id" varStatus="position">
+					       	<option value="${Country_id}"
+				          	<c:if test="${Teacher_Details.country_id==Country_id}">
+				       			selected
+				       		</c:if>		       	
+					       	><c:out value='${Countries.country_Name[position.index]}'/></option>
+					      </c:forEach>
+			  			</select>		  								   					  
+ 					  </div>
+ 					</div>
+  					<div class="control-group">
+					  <label class="control-label">City *</label>
+		              <div class="controls"> 
+          	 			<input type="text" name="City" id="City" class="span11"  maxlength="100" required value="<c:out value='${Teacher_Details.city}'/>">	 							 							
+ 					  </div>
+ 					</div>
+   					<div class="control-group">
+					  <label class="control-label">ZIP Code / PO Box</label>
+		              <div class="controls">
+						<input name="PO_Box" type="number" id="PO_Box" class="span11" min="0" max="1000000000" value="<c:if test="${Teacher_Details.PO_Box!=0}"><c:out value='${Teacher_Details.PO_Box}'/></c:if>">							 					
+ 					  </div>
+ 					</div>
+  					<div class="control-group">
+					  <label class="control-label">Full Address *</label>
+		              <div class="controls">
+						<input name="Full_Address" type="text" id="Full_Address" class="span11" required maxlength="255" value="<c:out value='${Teacher_Details.full_Address}'/>">							 								
+ 					  </div>
+ 					</div>
+  					<div class="control-group">
+					  <label class="control-label">Gender *</label>
+		              <div class="controls">			
+						<select name="Gender" id="Gender" class="span11" required>
+						  <option 
+				          	<c:if test="${Teacher_Details.gender=='Male'}">
+				       			selected
+				       		</c:if>				  
+						  > 
+						  	Male
+						  </option>
+						   <option 
+				          	<c:if test="${Teacher_Details.gender=='Female'}">
+				       			selected
+				       		</c:if>				   
+						   > 
+						  	Female
+						  </option>
+						</select>
+ 					  </div>
+ 					</div>
+  					<div class="control-group">
+					  <label class="control-label">Email</label>
+		              <div class="controls">
+						<input name="Email" type="email" class="span11" id="Email" maxlength="255" value="<c:out value='${Teacher_Details.email}'/>">	 							
+ 					  </div>
+ 					</div>
+  					<div class="control-group">
+					  <label class="control-label">Tel</label>
+		              <div class="controls">	
+           				<input name="Tel" type="text" class="span11" id="Tel" value="<c:out value='${Teacher_Details.tel}'/>" maxlength="100">	 						
+ 					  </div>
+ 					</div>
+  					<div class="control-group">
+					  <label class="control-label">Mobile</label>
+		              <div class="controls">	
+           				 <input name="Mobile" type="text" class="span11" id="Mobile" value="<c:out value='${Teacher_Details.mobile}'/>" maxlength="100">	 					 		
+ 					  </div>
+ 					</div> 	
+  					<div class="control-group">
+					  <label class="control-label">Date of birth *</label>
+		              <div class="controls">
+            			<input name="Birth_Date" type="Date" class="span11" value="<c:out value='${Teacher_Details.birth_Date}'/>" required>            						
+ 					  </div>
+ 					</div> 					
+  					<div class="control-group">
+					  <label class="control-label">Username *</label>
+		              <div class="controls">
+				          <input name="Username" type="text" id="Username" class="span11" required  pattern=".{8,}" title="8 characters minimum" maxlength="50" value="<c:out value='${Teacher_Details.username}'/>"
+				           onblur="checkUsername(this.value,'${Teacher_Details.username}')" 
+				           onChange="document.getElementById('UsernameMsg').innerHTML='';">
+					  </div>
+          				<div id="UsernameMsg" style="width:60%;height:20px;display:inline-block"></div>		
+					</div>
+  					<div class="control-group">
+					  <label class="control-label">Password *</label>
+		              <div class="controls">
+			             <input name="Password" type="text" id="Password" class="span11" required  pattern=".{8,}" title="8 characters minimum" maxlength="50" value="<c:out value='${Teacher_Details.password}'/>">
+			            <c:choose>
+			            <c:when test="${Teacher_Details.first_Login==1}">
+			           		 <div><font size="2"><i>Teacher must change this password at the first login</i></font></div>
+			            </c:when>
+			            <c:otherwise>
+			            	<div><font size="2"><i>Teacher has already changed the password at the first login</i></font></div>
+			            </c:otherwise>
+			            </c:choose>             
+			             <input name="Teacher_id" type="hidden" class="text" id="Teacher_id" value="${Teacher_Details.teacher_id}">
+	 				  </div>	 				  			
+ 					</div> 	 				
+ 					<font size="2" color="red"><b><i>Note: Teacher will use these username and password for login. To login as a Teacher <a href="${pageContext.request.contextPath}/Teacher/Teacher_Login.jsp" target=_blank>Click Here</a></i></b></font>								 										 									 					 					 					 																									 					
+		            <div class="form-actions">
+					    <input type="submit" name="Modify" id="Modify" value="Edit" class="btn btn-info" onClick="checkUsername(Username.value, '${Teacher_Details.username}');return validateSchoolCheckbox();">
+					    <input type="button" name="Delete" id="Delete" value="Delete" onClick="showDeleteMessage()" class="btn btn-danger"> 
+		            </div>
+		            <div id="DeleteMessage" ></div> 
+		            <div class="requiredSignNote">Fields marked (*) are required</div>
+				 		 <input type="hidden" name="csrfPreventionSalt" value="<c:out value='${csrfPreventionSalt}'/>"/>				    
+				    </form>
+		        </div>
+		     </div>	
+		   </div>
+		   <div class="span6">
+		      <div class="widget-box">
+		        <div class="widget-title"> <span class="icon"> <i class="icon-align-justify"></i> </span>
+		          <h5>Important Notes</h5>
+		        </div>
+		       	<div class="widget-content nopadding">
+					After you create the teacher profile, you will need to do the following three steps to give authority to the class teacher (who takes attendance, gives assignments, grade exams,...etc):<br/>				
+					<ul>
+					<li>
+						Assign Grades to the teacher. You can do this from Teacher > Assign Grade.
+					</li>
+					<li>
+						Assign Classes to the teacher. You can do this from Teacher > Assign Class.
+					</li>												
+					<li>
+						Assign Courses to the teacher. You can do this from Teacher > Assign Course.
+					</li>
+					</ul>
+		    		After you create the teacher profile, you will need to do the following two steps if you would like to give authority to teacher to upload content (like eBooks, lessons, standard assignments,...etc) for a certain course:<br/>
+					<ul>
+					<li>
+						Assign Grades to the teacher. You can do this from Teacher > Assign Grade.
+					</li>
+					<li>
+						Assign Content to the teacher. You can do this from Teacher > Assign Content.
+					</li>												
+					</ul>
+		        </div>
+		      </div>
+		  </div>		   	
+		 </div>
+		</div>
+	</div>
+	<div class="rightContent"><%@include file="../includes/AdminRight.jsp" %></div>
+
+<!--Footer-part-->
+<div class="row-fluid">
+<div id="footer" class="span12"><%@include file="../includes/AdminFooter.jsp" %></div></div>
+<script>
+$(document).ready(function() {
+
+	$('form').submit(function(event) {
+		event.preventDefault();
+		var formData = new FormData(document.getElementsByName('form1')[0]);      
+		formData.append("Teacher_Photo1", resized_image); 
+		
+		if(document.getElementById("OkToSubmit").value=='OK')
+		{
+			$.ajax({
+	        	type: "POST",
+	            url: "${pageContext.request.contextPath}/Manage_Teacher",
+	            data: formData,
+	            processData: false,
+	            contentType: false,
+	        })
+           .done(function(data) {
+	              $("#content").empty().append($(data).find('#content'));
+           });
+	        event.preventDefault(); 
+		}
+    });
+}); 
+
+</script>
+</body>
+</html>

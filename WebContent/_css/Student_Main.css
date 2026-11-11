@@ -1,0 +1,1957 @@
+body{
+	background-color: #d9d9d9;
+}
+nav {
+
+	text-align: left;
+	margin-left:0px;
+	
+}
+
+nav ul ul {
+	display: none;
+}
+
+	nav ul li:hover > ul {
+		display: block;
+	}
+	
+nav ul {
+/*  	background: #efefef; 
+	background: linear-gradient(top, #fff 0%, #fff 100%);  
+	background: -moz-linear-gradient(top, #efefef 0%, #bbbbbb 100%); 
+	background: -webkit-linear-gradient(top, #fff 0%,#fff 100%);  
+	background-color: #fff;
+	box-shadow: 5px 5px 9px rgba(51,0,0,0.9);
+	padding: 0 20px;
+	border-radius: 10px;   */
+	list-style: none;
+	position: relative;
+	display: inline-table;
+}
+	nav ul:after {
+		content: ""; clear: both; display: block;
+	}
+
+nav ul li {
+	float: left;
+}
+	nav ul li:hover {
+
+		background:  #fff;  /*main menu item highlight*/
+/* 		background: linear-gradient(top,  #442475 0%,  #442475 40%);
+		background: -moz-linear-gradient(top,  #442475 0%,  #442475 40%);
+		
+		background: -webkit-linear-gradient(top,  #442475 0%, #442475 40%); */
+	}
+		
+		nav ul li:hover a {
+			color:  #6600ff ; /*submenu text*/
+			/* text-shadow: 1px 1px 4px black; */
+		}
+  		nav ul li:hover > a {
+    			color:#fff ;
+			}  
+	
+	nav ul li a {
+		display: block; 
+		color: #fff; text-decoration: none; /* Main menu text */
+		font: 22px/1.2 Times New Roman, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	}
+	
+nav ul ul {
+	background: #EFEAFC; border-radius: 0px; padding: 0px; /* Sub menu background*/
+	position: absolute; top: 100%;
+	z-index: 999;
+}
+	nav ul ul li {
+		float: none; 
+		border-top: 1px solid #b3b3ff; /* Submenu separator (old - #d1e0de)*/ 
+		border-bottom: 1px solid #b3b3ff; /* Submenu separator (old - #fff)*/
+		position: relative;
+    	white-space: nowrap;
+
+	}
+		nav ul ul li a {
+			padding: 5px 50px;
+			color: #000 ; /*???*/
+		}	
+			nav ul ul li a:hover {
+				background:  #0cacd7;  /*submenu highlight*/ /*#806D9C*/
+			}
+			
+			
+nav ul ul ul {
+	position: absolute; left: 100%; top:0;
+}
+/********************************************************************************************************/			
+nav .top ul ul {
+	position: absolute; left: 100%; top:0;
+	white-space: nowrap;
+		
+}
+
+nav .top ul {
+	display: none;
+	white-space: nowrap;	
+}
+
+nav .top li:hover > ul {
+	display: block;
+	white-space: nowrap;
+}
+
+nav .top {
+	background: transparent; 	 
+	list-style: none;
+	position: relative;
+	display: inline-table;
+	white-space: nowrap;
+}
+nav .top:after {
+	content: ""; clear: both; display: block;
+	white-space: nowrap;
+}	
+nav .top li {
+	float: left;
+	white-space: nowrap;		
+}	
+
+nav .top li:hover {
+	background: #bf4080;  /*top menu item highlight*/	
+	white-space: nowrap;
+	height:35px;
+}
+
+nav .top li ul li:hover {
+	background: #660066;  /*top menu item highlight*/	
+	white-space: nowrap;
+}
+nav .top li:hover a {
+	color:  #000 ; /*submenu text*/
+	white-space: nowrap;
+}
+nav .top li:hover > a {
+ 	color:#ffe965 ;
+ 	white-space: nowrap;
+}  
+	
+nav .top li a {
+	display: block; padding: 5px 17px;
+	color: #fff; text-decoration: none; /* Main menu text */
+	white-space: nowrap;
+	height: 24px;
+   	line-height: 24px;
+}
+	
+nav .top ul {
+	background: #e6e6e6; border-radius: 0px; padding: 0px; /* Sub menu background*/
+	position: absolute; top: 100%;
+	z-index: 999;
+	white-space: nowrap;
+	left:auto;
+    right:30px;
+    margin-right:-30px;
+    text-align:right;
+    
+    
+}
+nav .top ul li {
+	float: none; 
+	border-top: 1px solid #ebf9eb; /* Submenu separator (old - #d1e0de)*/ 
+	border-bottom: 1px solid #ebf9eb; /* Submenu separator (old - #fff)*/
+	position: relative;
+   	white-space: nowrap;
+
+}
+
+nav .top ul li a {
+	padding: 5px 30px;
+	color: #000 ; /*???*/
+	white-space: nowrap;
+	font: 15px/1.2 Times New Roman, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}	
+nav .top ul li a:hover {
+	background: #660066;  /*submenu highlight*/
+	white-space: nowrap;
+}	
+/******************************************************************************************************/
+.paralleogram{
+	width: 130px;
+	height: 30px;
+	margin-right:0px;
+	margin-left:0px;
+	-webkit-transform: skew(340deg);
+	-moz-transform: skew(340deg);
+	-o-transform: skew(340deg);    
+    color:#fff;
+    font: 15px/1 Times New Roman, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-shadow: 2px 2px 2px black;
+    box-shadow: 3px 5px 1px rgba(0,0,0,0.5);	
+}
+
+
+/*---------------------------Layout---------------------------*/
+ .pagewrap {
+	width: 1130px;
+	margin: 0 auto; 
+	background-color: white;
+	min-height: 768px; 	
+}
+.logo{
+	float: left;
+	clear:none;
+	height: 100px;
+	margin-left: 35px;
+	
+}
+.top-menu{
+	height:30px;
+	float: left; 
+}
+.down-menu{
+	width: 1130px; 
+	height: 50px;
+	display: inline-block;
+	vertical-align:top;
+}
+.content {
+	width: 1130px;
+	float: center;
+	min-height: 600px;
+
+}
+
+.header{
+	width: 1130px;
+	height: 117px;	
+	text-align: center; 
+}
+
+.middleContent {
+ background-color:#fff;
+ width:1090px;  
+ margin-top:75px;
+ margin-left: 40px;
+ float: center;
+ display: inline-block;
+ border: 0px solid green;
+ overflow: hidden; 
+} 
+
+.rightContent {
+
+ min-width:0px;
+ float: right;
+ margin-top:50px;
+ background-color:#fff;
+ margin-right: 10px;
+ }
+ 
+ .leftContent{
+ width:0px;
+ }
+ 
+ .footer{
+/*  	border: 1px solid #c6c7cc;
+ 	 height: 51px; */
+ 	 clear: both;
+ 	 
+ }
+ 
+ /*******************************************Login Screen **************************************/
+ /*.parentTable {
+  border: 0px solid red;
+  border-radius: 8px;
+  font: 14px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif;
+  overflow: hidden;
+  width: 620px;
+   margin: 0 auto;
+   background-color:#EFEAFC;
+   margin-bottom:10px;
+   box-shadow: 3px 3px 9px rgba(0,0,0,0.5);
+   float: center;
+} 
+.parentTable label{
+  color: #fff;
+  background: linear-gradient(to right, #0887aa  0%, #85e0f9 100%); 
+  background: -moz-linear-gradient(right, #0887aa 0%, #85e0f9 100%); 
+  background: -webkit-linear-gradient(right, #0887aa #85e0f9 100%);    
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0px;
+  text-align: center;
+  font-size: 100%; 
+  padding-top: .3em; 
+  padding-right: .25em;
+
+  box-shadow: 3px 3px 9px rgba(0,0,0,0.9);
+  text-shadow: 1px 1px 4px black;
+
+}
+ .parentTable th{
+	text-align: center;
+	top:20px;
+	font-weight:bold;
+	background-color:#0887aa;
+	color:#fff;
+	width:50%;
+	margin:0 auto;
+	box-shadow: 3px 5px 1px rgba(0,0,0,0.5);
+	height: 30px;
+	margin-bottom: 4px;
+ } 
+ form {
+  border: 0px solid #c6c7cc;
+  border-radius: 5px;
+  font: 14px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif;
+  float: center;
+  overflow-x: auto; 
+}
+input[type="text"]{
+  border-radius: 5px;
+  font: 14px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 0;
+
+}
+
+input[type="text"]:focus{ 
+    outline: none;
+    border-color: #9ecaed;
+    box-shadow: 0 0 10px #9ecaed;
+	background:#f3f1e9;
+	color: #476b6b;
+}
+
+input[type="password"]{
+  border-radius: 5px;
+  font: 14px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 0;
+
+}
+
+input[type="password"]:focus{ 
+    outline: none;
+    border-color: #9ecaed;
+    box-shadow: 0 0 10px #9ecaed;
+	background:#f3f1e9;
+	color: #476b6b;
+}
+
+.bigText {
+	
+	width: 300px;
+}
+
+.mediumText{
+	
+	width: 150px;
+}
+input[type="Date"] {
+  border-radius: 5px;
+  font: 14px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 0;
+}
+
+input[type="Date"]:focus{ 
+    outline: none;
+    border-color: #9ecaed;
+    box-shadow: 0 0 10px #9ecaed;
+	background:#f3f1e9;
+	color: #476b6b;
+}
+ select {
+  float: center;
+  border-radius: 5px;
+  font: 15px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 0; 
+  display: inline-block;
+  padding: 4px 3px 3px 5px;
+  outline:none; remove focus ring from Webkit;
+  line-height: 1.2;
+  background: #fff;
+  color:#000;
+  width: 550px;
+  height: 25px;
+  overflow: hidden;
+  border: 1px solid #ccc; 
+  -webkit-appearance:none;
+  background-image:url(../images/Custom_Arrow5.png); 
+  background-repeat: no-repeat; 
+  background-position:right center;  
+  padding:4px;
+  margin-left:0px;
+} */
+ /**********************************************************************************************/
+ /*------------------------------------------------------------*/
+/*******************************Content**********************/
+.course_Content {
+	height: 50px;
+	white-space:nowrap;
+	background-color: #0066ff;
+		/* Internet Explorer 10 */
+	display:-ms-flexbox;
+	-ms-flex-pack:center;
+	-ms-flex-align:center;
+	
+	/* Firefox */
+	display:-moz-box;
+	-moz-box-pack:center;
+	-moz-box-align:center;
+	
+	/* Safari, Opera, and Chrome */
+	display:-webkit-box;
+	-webkit-box-pack:center;
+	-webkit-box-align:center;
+	
+	/* W3C */
+	display:box;
+	box-pack:center;
+	box-align:center;
+    
+}
+
+.contentTable {
+  border: 1px solid #c6c7cc;
+  border-radius: 8px;
+  font: 14px/1.4 Times New Roman, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  overflow: hidden;
+  width: 1000px;
+   margin: 0 auto;
+   background-color:#fff;
+   margin-bottom:10px;
+   box-shadow: 3px 3px 9px rgba(0,0,0,0.5);
+} 
+ .contentTable th{
+	background-color:#0066ff;
+ } 
+ .contentTable .dataTable  tr:nth-child(even) {
+ background: #f2f2f2
+ }
+ .contentTable .dataTable tr:nth-child(odd) {
+ background: #cccccc
+ } 
+ 
+/*  .contentTable .dataTable label {
+  color: #fff;
+  background:-moz-linear-gradient(left,orange,orange,orange);
+  background:-webkit-linear-gradient(left, orange, orange, orange);
+  background:-o-linear-gradient(left,orange,orange,orange);
+  background:-ms-linear-gradient(left,orange,orange,orange);
+  background-:linear-gradient(left,orange,orange,orange);
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0px;
+  text-align: center;
+  font-size: 100%; 
+  padding-top: .3em; 
+  padding-right: .25em; 
+  white-space: nowrap;
+  text-shadow: 1px 1px 4px black;
+  box-shadow: 5px 5px 1px rgba(0,0,0,0.5);
+} */
+
+ .lessonTable {
+  border: 0px solid red;
+  border-radius: 8px;
+  font: 14px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif;
+  overflow: hidden;
+  width: 800px;
+   margin: 0 auto;
+   background-color:#f2f2f2;
+    margin-top:10px;
+   margin-bottom:10px;
+   box-shadow: 3px 3px 9px rgba(0,0,0,0.5);
+   float: left;
+} 
+/* .lessonTable label{
+  color: #fff;
+  width:200px;
+  background: linear-gradient(to right, orange  0%, orange 100%); 
+  background: -moz-linear-gradient(right, #0887aa 0%, #85e0f9 100%); 
+  background: -webkit-linear-gradient(right, #0887aa #85e0f9 100%);    
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0px;
+  text-align: center;
+  font-size: 100%; 
+  padding-top: .3em; 
+  padding-right: .25em;
+  box-shadow: 3px 3px 9px rgba(0,0,0,0.9);
+  text-shadow: 1px 1px 4px black;
+
+} */
+ .fileCategory{
+  color: #fff;
+  width:800px;
+  background:-moz-linear-gradient(left,#fff,#660066,#fff);
+  background:-webkit-linear-gradient(left,#fff,#660066,#fff);
+  background:-o-linear-gradient(left,#fff,#660066,#fff);
+  background:-ms-linear-gradient(left,#fff,#660066,#fff);
+  background-:linear-gradient(left,#fff,#660066,#fff);  
+  font-weight: bold;
+  margin-top:10px;
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: 100%; 
+  padding-top: .3em; 
+  padding-right: .25em;
+  box-shadow: 3px 3px 9px rgba(0,0,0,0.9);
+  text-shadow: 1px 1px 4px black;
+
+}
+
+ a.lessonLink:link {
+    color: #834099;
+	text-decoration:underline;
+	font: 15px/1.4 Time New Roman, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: bold;
+}
+ a.lessonLink:hover {
+    color: #d35f77;    
+}
+.contentBookTable {
+  border: 1px solid #c6c7cc;
+  border-radius: 8px;
+  font: 14px/1.4 Times New Roman, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  overflow: hidden;
+  width: 300px;
+   margin: 0 auto;
+   background-color:#fff;
+   margin-bottom:10px;   
+} 
+.contentBookTable tr td:first-child{
+	width:20px;
+}
+
+.contentLessonTable {
+  border: 1px solid #c6c7cc;
+  border-radius: 8px;
+  font: 14px/1.4 Times New Roman, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  overflow: hidden;
+  width: 700px;
+   margin: 0 auto;
+   background-color:#fff;
+   margin-bottom:10px;   
+} 
+ .contentLessonTable td:nth-child(1) {
+ width:300px;
+ }
+.contentCourse{
+	width:30%;
+	text-align:center;
+	color:#fff;
+	background-color:#5d5d5e;
+	font: 17px/1 Times New Roman, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight:bold;
+}
+
+.contentLessonInProgress{
+	text-align:center;
+	color:#fff;
+	background-color:#8f8f91;
+	font: 15px/1 Times New Roman, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight:bold;
+}
+
+.contentAllLessons{
+	text-align:center;
+	color:#fff;
+	background-color:#ccccce;
+	font: 15px/1 Times New Roman, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight:bold;
+	width:12%;
+}
+.contentAllLessonsLink{
+	text-align:center;
+	color:#fff;
+	background-color:#FF4700;
+	font: 15px/1 Times New Roman, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight:bold;
+	width:120px;
+}
+.contentBook{
+	text-align:left;
+	color:red;
+	background-color:#fff;
+	font: 15px/1 Times New Roman, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight:bold;
+}
+
+.contentLesson{
+	text-align:left;
+	color:blue;
+	background-color:#fff;
+	font: 15px/1 Times New Roman, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight:bold;
+}
+
+.contentBookName{
+	text-align:left;
+	color:#442475;
+	background-color:#FFE8FF;
+	font: 15px/1 Times New Roman, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight:bold;
+}
+.contentLessonField{
+	float:left;
+	clear:none;
+	text-align:left;
+	color:#CC0066;
+	font: 14px/1 Times New Roman, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight:bold;
+	margin-left:10px;	
+	white-space:pre;
+}
+
+.contentLessonText{
+	float:left;
+	clear:none;
+	text-align:left;
+	color:#CC0066;
+	font: 14px/1 Times New Roman, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight:bold;
+	margin-left:30px;		
+	width:600px;
+
+} 
+.contentAssignmentText{
+	float:left;
+	clear:none;
+	text-align:left;
+	color:#CC0066;
+	font: 14px/1 Times New Roman, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight:bold;
+	margin-left:30px;	
+	width:600px;
+
+} 
+.contentLessonStart{
+	float:left;
+	clear:none;
+	text-align:center;
+	color:#00CC00;	
+	font: 14px/1 Times New Roman, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight:bold;
+}
+.contentLessonEnd{
+	float:left;
+	clear:none;
+	text-align:center;
+	color:red;
+	font: 14px/1 Times New Roman, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight:bold;
+	margin-left:20px;
+}
+.assignmentGrade{
+	float:left;
+	clear:none;
+	text-align:center;
+	color:blue;
+	font: 14px/1 Times New Roman, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight:bold;
+	margin-left:20px;
+}
+.contentLessonHead{
+	clear:none;
+	text-align:center;
+	background-color:#FFE8FF;
+	vertical-align:top;
+}
+.contentLessonDesc{
+	clear:none;
+	text-align:left;
+	background-color:#FFF6FF;
+}
+.contentLessonOtherTitle{
+	float:left;
+	clear:both;
+	color:#000;
+	background-color:#FFF6FF;
+	font: 14px/1 Times New Roman, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight:bold;
+	margin-left:20px;
+	
+}
+/***************************************************Attendance**********************/ 
+ .attendance {
+	background-color: orange;
+	height: 50px;
+		/* Internet Explorer 10 */
+	display:-ms-flexbox;
+	-ms-flex-pack:center;
+	-ms-flex-align:center;
+	
+	/* Firefox */
+	display:-moz-box;
+	-moz-box-pack:center;
+	-moz-box-align:center;
+	
+	/* Safari, Opera, and Chrome */
+	display:-webkit-box;
+	-webkit-box-pack:center;
+	-webkit-box-align:center;
+	
+	/* W3C */
+	display:box;
+	box-pack:center;
+	box-align:center;
+    
+}
+.attendanceTable {
+  border: 1px solid #c6c7cc;
+  border-radius: 8px;
+  font: 14px/1.4 Times New Roman, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  overflow: hidden;
+  width: 1000px;
+   margin: 0 auto;
+   background-color:#fff;
+   margin-bottom:10px;
+   box-shadow: 3px 3px 9px rgba(0,0,0,0.5);
+} 
+
+ .attendanceTable th{
+	background-color:orange;
+ } 
+ .attendanceTable  tr:nth-child(even) {
+ background: #FFF6FF
+ }
+ .attendanceTable tr:nth-child(odd) {
+ background: #FFE8FF
+ }
+ 
+ .attendanceHeader{
+	text-align:center;
+	color:#fff;
+	background-color:#FF4700;
+	font: 15px/1.5 Times New Roman, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight:bold;
+	box-shadow: 8px 8px 1px rgba(204,204,204,0.9);
+}
+
+.attendanceCourse{
+	text-align:center;
+	color:white;
+	background-color:#0066ff;
+	font: 17px/1.2 Times New Roman, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight:bold;
+	text-shadow: 1px 1px 4px black; 
+    box-shadow: 8px 5px 1px rgba(0,0,0,0.4);
+}
+.attendanceCompleted{
+	text-align:center;
+	color:#CC0066;
+	font: 17px/1 Times New Roman, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight:bold;	
+}
+.attendancePresent{
+	text-align:center;
+	color:#00CC00;
+	font: 17px/1 Times New Roman, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight:bold;	
+}
+.attendanceAbsent{
+	text-align:center;
+	color:red;
+	font: 17px/1 Times New Roman, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight:bold;	
+}
+.attendanceExcused{
+	text-align:center;
+	color:orange;
+	font: 17px/1 Times New Roman, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight:bold;	
+}
+.attendanceLate{
+	text-align:center;
+	color:orange;
+	font: 17px/1 Times New Roman, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight:bold;	
+}
+ 
+/***********************************************Assignment***************************/
+ .assignment { 
+	height: 50px;
+	background-color: red;
+		/* Internet Explorer 10 */
+	display:-ms-flexbox;
+	-ms-flex-pack:center;
+	-ms-flex-align:center;
+	
+	/* Firefox */
+	display:-moz-box;
+	-moz-box-pack:center;
+	-moz-box-align:center;
+	
+	/* Safari, Opera, and Chrome */
+	display:-webkit-box;
+	-webkit-box-pack:center;
+	-webkit-box-align:center;
+	
+	/* W3C */
+	display:box;
+	box-pack:center;
+	box-align:center;
+}
+.assignmentTable {
+  border: 1px solid #c6c7cc;
+  border-radius: 8px;
+  font: 14px/1.4 Times New Roman, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  overflow: hidden;
+  width: 1000px;
+   margin: 0 auto;
+   background-color:#fff;
+   margin-bottom:10px;
+   box-shadow: 3px 3px 9px rgba(0,0,0,0.5);
+}
+  .assignmentTable th{
+	background-color:red;
+	box-shadow: 8px 8px 1px rgba(0,0,0,0.2);
+ } 
+
+.dataTable {
+  border: 1px solid #c6c7cc;
+  border-radius: 8px;
+  font: 14px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif;
+  overflow: hidden;
+  width: 600px;
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  box-shadow: 3px 3px 9px rgba(0,0,0,0.5);
+}
+/*  .dataTable label {
+  color: #fff;
+  background:-moz-linear-gradient(left,#66ccff,#4c6767,#66ccff);
+  background:-webkit-linear-gradient(left,orange,red,orange);
+  background:-o-linear-gradient(left,#66ccff,#4c6767,#66ccff);
+  background:-ms-linear-gradient(left,#66ccff,#4c6767,#66ccff);
+  background-:linear-gradient(left,#66ccff,#4c6767,#66ccff);
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0px;
+  text-align: center;
+  font-size: 100%; 
+  padding-top: .3em; 
+  padding-right: .25em; 
+  white-space: nowrap;
+  text-shadow: 1px 1px 4px black;
+  box-shadow: 5px 5px 1px rgba(0,0,0,0.5);
+
+} */
+ .dataTable  tr:nth-child(even) {
+ background: #ffe5e5
+ }
+ .dataTable tr:nth-child(odd) {
+ background: #ffb3b3
+ } 
+ 
+ .assignmentCourse{
+	text-align:left;
+	color:#fff;
+	background-color:#0066ff;
+	font: 22px/1.5 Times New Roman, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight:bold;
+	text-shadow: 1px 1px 4px black; 
+    box-shadow: 8px 5px 1px rgba(0,0,0,0.4);
+}
+
+.assignmentName{
+	text-align:left;
+	color:#CC0066;
+	font: 12px/1.2 Times New Roman, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight:bold;   
+}
+ .previousAssignmentLink:link {
+    color:#fff;
+	text-decoration:underline;
+	font: 15px/1.4 Time New Roman, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    background-color:#660066;
+}
+.previousAssignmentLink:hover {
+    color: gold; 
+    background-color: #990099;   
+}
+.previousAssignmentLink:visited {
+    color: #fff;    
+}
+
+/***************************************************Teachers**********************/ 
+ .myTeachers {
+	background-color: #660066;
+	height: 50px;
+		/* Internet Explorer 10 */
+	display:-ms-flexbox;
+	-ms-flex-pack:center;
+	-ms-flex-align:center;
+	
+	/* Firefox */
+	display:-moz-box;
+	-moz-box-pack:center;
+	-moz-box-align:center;
+	
+	/* Safari, Opera, and Chrome */
+	display:-webkit-box;
+	-webkit-box-pack:center;
+	-webkit-box-align:center;
+	
+	/* W3C */
+	display:box;
+	box-pack:center;
+	box-align:center;
+    
+}
+.myTeachersTable {
+  border: 1px solid #c6c7cc;
+  border-radius: 8px;
+  font: 14px/1.4 Times New Roman, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  overflow: hidden;
+  width: 800px;
+   margin: 0 auto;
+   background-color:#fff;
+   margin-bottom:10px;
+   box-shadow: 3px 3px 9px rgba(0,0,0,0.5);
+} 
+
+ .myTeachersTable th{
+	background-color:#660066;
+ } 
+ .myTeachersTable  tr:nth-child(even) {
+ background: #FFF6FF
+ }
+ .myTeachersTable tr:nth-child(odd) {
+ background: #FFE8FF
+ }
+ .myTeachersTable td{
+ vertical-align:top;
+ }
+ 
+/*  .myTeachersTable .dataTable label {
+  color: #fff;
+  background:-moz-linear-gradient(left,#fff,#660066,#fff);
+  background:-webkit-linear-gradient(left,#fff,#660066,#fff);
+  background:-o-linear-gradient(left,#fff,#660066,#fff);
+  background:-ms-linear-gradient(left,#fff,#660066,#fff);
+  background-:linear-gradient(left,#fff,#660066,#fff);
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0px;
+  text-align: center;
+  font-size: 100%; 
+  padding-top: .3em; 
+  padding-right: .25em; 
+  white-space: nowrap;
+  text-shadow: 1px 1px 4px black;
+  box-shadow: 5px 5px 1px rgba(0,0,0,0.5);
+} */
+ .myTeachersHeader{
+	text-align:center;
+	color:#fff;
+	background-color:#bf4080;
+	font: 15px/1.5 Times New Roman, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight:bold;
+	box-shadow: 8px 8px 1px rgba(204,204,204,0.9);
+}
+
+.myTeachersCourse{
+	text-align:center;
+	width:200px;
+	color:white;
+	background-color:#660066;
+	font: 17px/1.2 Times New Roman, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight:bold;
+	text-shadow: 1px 1px 4px black; 
+    box-shadow: 8px 5px 1px rgba(0,0,0,0.4);
+}
+.myTeachersName{
+	text-align:center;
+	color:#660066;
+	font: 17px/1 Times New Roman, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight:bold;	
+}
+
+.myTeacherPhoto{
+	text-align:center;
+	width:100px;	
+}
+/***********************************************Grading**********************/
+.grading {
+	height: 50px;
+	background-color: #00cccc;
+		/* Internet Explorer 10 */
+	display:-ms-flexbox;
+	-ms-flex-pack:center;
+	-ms-flex-align:center;
+	
+	/* Firefox */
+	display:-moz-box;
+	-moz-box-pack:center;
+	-moz-box-align:center;
+	
+	/* Safari, Opera, and Chrome */
+	display:-webkit-box;
+	-webkit-box-pack:center;
+	-webkit-box-align:center;
+	
+	/* W3C */
+	display:box;
+	box-pack:center;
+	box-align:center;   
+}
+ .gradingTable { 
+  border: 1px solid #c6c7cc;
+  border-radius: 8px;
+  font: 14px/1.4 Times New Roman, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  overflow: hidden;
+  width: 1000px;
+   margin: 0 auto;
+   background-color:#fff;
+   margin-bottom:10px;
+   box-shadow: 3px 3px 9px rgba(0,0,0,0.5);
+   border-spacing: 0px;
+   border-collapse: collapse;
+}
+.gradingTable td{
+	border: 1px solid silver
+}
+.gradingTable th{
+	background-color:#00cccc;
+	box-shadow: 8px 8px 1px rgba(0,0,0,0.2);
+ }
+   .gradingFooter{
+  color: white;
+   padding: 8px;
+   display: table-cell;
+   vertical-align: inherit;
+   font-weight: bold;
+   text-align: center;
+   border-width: 0px;
+   border-style: solid;
+   border-color: #666666;
+   font:bold 18px/1.1em Arial, Helvetica, Sans-Serif;
+   text-shadow: 1px 1px 4px black;
+   letter-spacing:0.3em;  
+	background-color:grey;
+	box-shadow: 8px 8px 1px rgba(0,0,0,0.2);
+ } 
+
+.gradingHeader{
+	text-align:center;
+	color:#fff;
+	background-color:#FF4700;
+	font: 15px/1.5 Times New Roman, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight:bold;
+	box-shadow: 8px 8px 1px rgba(204,204,204,0.9);
+}
+
+.gradingPercent{
+	text-align:center;
+	width:50px;
+	color:#000;
+	background-color:#ffccff; /*#00CC00*/
+	font: 15px/1.5 Times New Roman, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight:bold;
+	box-shadow: 8px 8px 1px rgba(204,204,204,0.9);
+}
+
+.gradingScale{
+	text-align:center;
+	width:50px;
+	color:#000;
+	background-color:#FFE8FF; /*#E8FFF0*/
+	font: 15px/1.5 Times New Roman, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight:bold;
+	box-shadow: 8px 8px 1px rgba(204,204,204,0.9);
+}
+
+ .catTable {
+  float: right;
+  overflow: hidden;
+  width: 250px;
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+ .catTable td{
+ border-bottom: 1px solid grey;
+ }
+.catName{
+	text-align:left;
+	font-weight:bold;
+	border-right: 1px solid grey;
+}
+.catPercent{
+	text-align:center;
+	font-weight:bold;
+}
+/***********************************************Schedule**********************/
+.schedule {
+	height: 50px;
+	background-color: #ff4dc3;
+	
+		/* Internet Explorer 10 */
+	display:-ms-flexbox;
+	-ms-flex-pack:center;
+	-ms-flex-align:center;
+	
+	/* Firefox */
+	display:-moz-box;
+	-moz-box-pack:center;
+	-moz-box-align:center;
+	
+	/* Safari, Opera, and Chrome */
+	display:-webkit-box;
+	-webkit-box-pack:center;
+	-webkit-box-align:center;
+	
+	/* W3C */
+	display:box;
+	box-pack:center;
+	box-align:center;    
+}
+.scheduleArea {
+	width:1080px;
+    overflow-x:auto; 
+    margin-right:5px;   
+}
+ .scheduleTable {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font: 14px/1.4 Times New Roman, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  overflow: hidden;
+
+   margin: 0 auto;
+   background-color:#ccc;
+   margin-bottom:10px;
+   box-shadow: 3px 3px 9px rgba(0,0,0,0.5);
+
+}
+ .scheduleTable th{
+	background-color:#ff4dc3;
+	box-shadow: 8px 8px 1px rgba(0,0,0,0.2);	
+
+ } 
+.scheduleSession{
+	width:130px;
+	text-align:center;
+	color:#fff;
+	background-color:#0aaedb;
+	font: 12px/1.5 Times New Roman, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight:bold;
+	box-shadow: 8px 8px 1px rgba(204,204,204,0.2);
+}
+
+.scheduleDay{
+	width:130px;
+	text-align:center;
+	color:#fff;
+	background-color:#0aaedb; 
+	font: 14px/1.5 Times New Roman, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight:bold;
+	box-shadow: 8px 8px 1px rgba(204,204,204,0.2);
+}
+.scheduleCell{
+	width:150px;
+	text-align:left;
+	vertical-align:middle;
+	color:#fff;
+	background-color:#FFF6FF; 
+	font: 14px/1.5 Times New Roman, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight:bold;
+	box-shadow: 8px 8px 1px rgba(204,204,204,0.2);
+	white-space:nowrap;
+}
+
+.scheduleCourse{
+	float:left;
+	clear:none;
+	text-align:left;
+	color:#CC0066;
+	font: 14px/1.2 Times New Roman, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight:bold;
+	margin-left:10px;
+}
+.scheduleBreak{
+	text-align:center;
+	color:#0aaedb;
+	font: 15px/1 Times New Roman, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight:bold;
+} 
+/***********************************************Calendar***************************/
+ .calendar { 
+	clear:none;
+	text-align:left;
+	background-color:#fff;
+}
+
+.calendarTable {
+  border: 1px solid #c6c7cc;
+  boder-spacing: 0px;
+  border-collapse: collapse;
+  border-radius: 8px;
+  font: 14px/1.4 Times New Roman, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  overflow: hidden;
+  width: 1000px;
+  margin: 0 auto;
+  color:black;
+  background-color:orange;
+  margin-bottom:10px;
+  box-shadow: 3px 3px 9px rgba(0,0,0,0.5);
+}
+ .calendarTable th{
+	background-color:#009933;
+	box-shadow: 8px 8px 1px rgba(0,0,0,0.2);
+ } 
+
+/* .calendarTable label{
+  color: #fff; 
+  background:-moz-linear-gradient(left,#009933,#009933,#009933);
+  background:-webkit-linear-gradient(left,#009933,#009933,#009933);
+  background:-o-linear-gradient(left,#009933,#009933,#009933);
+  background:-ms-linear-gradient(left,#009933,#009933,#009933);
+  background-:linear-gradient(left,#009933,#009933,#009933);   
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0px;
+  text-align: center;
+  font-size: 100%; 
+  padding-top: .3em; 
+  padding-right: .25em;
+  box-shadow: 3px 3px 9px rgba(0,0,0,0.9);
+  text-shadow: 1px 1px 4px black;
+
+}  */
+.calendarTable td{
+  border: 1px solid #fff;
+  boder-spacing: 0px;
+  border-collapse: collapse;
+  width:50px;
+}
+.calendarDataTable {
+  border: 1px solid #c6c7cc;
+  border-radius: 8px;
+  font: 14px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif;
+  overflow: hidden;
+  width: 600px;
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  box-shadow: 3px 3px 9px rgba(0,0,0,0.5);
+}
+/* .calendarDataTable label {
+  color: #fff;
+  background:-moz-linear-gradient(left,orange,orange,orange);
+  background:-webkit-linear-gradient(left,orange,orange,orange);
+  background:-o-linear-gradient(left,orange,orange,orange);
+  background:-ms-linear-gradient(left,orange,orange,orange);
+  background-:linear-gradient(left,orange,orange,orange);
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0px;
+  text-align: center;
+  font-size: 100%; 
+  padding-top: .3em; 
+  padding-right: .25em; 
+  white-space: nowrap;
+  text-shadow: 1px 1px 4px black;
+  box-shadow: 5px 5px 1px rgba(0,0,0,0.5);
+
+} */
+ .calendarDataTable  tr:nth-child(even) {
+ background: #ebf9eb
+ }
+ .calendarDataTable tr:nth-child(odd) {
+ background: #d7f4d7
+ } 
+ /***********************************************Assignments Data Table********************/
+ .assignmentDataTable {
+  border: 1px solid #c6c7cc;
+  border-radius: 8px;
+  font: 14px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif;
+  overflow: hidden;
+  width: 800px;
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  box-shadow: 3px 3px 9px rgba(0,0,0,0.5);
+}
+/* .assignmentDataTable label {
+  color: #C9C6C6;
+  background:#CC0066;
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0px;
+  text-align: center;
+  font-size: 100%; 
+  padding-top: .3em; 
+  padding-right: .25em; 
+  white-space: nowrap;
+  text-shadow: 1px 1px 4px black;
+  box-shadow: 5px 5px 1px rgba(0,0,0,0.5);
+
+} */
+
+/***********************************************Exam Schedule***************************/
+ .examSchedule { 
+	clear:none;
+	text-align:left;
+	background-color:#fff;
+}
+
+.examScheduleTable {
+  border: 1px solid #c6c7cc;
+  boder-spacing: 0px;
+  border-collapse: collapse;
+  border-radius: 8px;
+  font: 14px/1.4 Times New Roman, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  overflow: hidden;
+  width: 1000px;
+  margin: 0 auto;
+  color:black;
+  background-color:#EFEAFC;
+  margin-bottom:10px;
+  box-shadow: 3px 3px 9px rgba(0,0,0,0.5);
+}
+ .examScheduleTable th{
+	background-color: #009999;
+	box-shadow: 8px 8px 1px rgba(0,0,0,0.2);
+ } 
+
+/* .examScheduleTable label{
+  color: #fff; 
+  background:-moz-linear-gradient(left,#009933,#009933,#009933);
+  background:-webkit-linear-gradient(left,#009933,#009933,#009933);
+  background:-o-linear-gradient(left,#009933,#009933,#009933);
+  background:-ms-linear-gradient(left,#009933,#009933,#009933);
+  background-:linear-gradient(left,#009933,#009933,#009933);   
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0px;
+  text-align: center;
+  font-size: 100%; 
+  padding-top: .3em; 
+  padding-right: .25em;
+  box-shadow: 3px 3px 9px rgba(0,0,0,0.9);
+  text-shadow: 1px 1px 4px black;
+
+}  */
+.examScheduleTable td{
+  border: 1px solid #fff;
+  boder-spacing: 0px;
+  border-collapse: collapse;
+  width:50px;
+}
+.examScheduleDataTable {
+  border: 1px solid #c6c7cc;
+  border-radius: 8px;
+  font: 14px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif;
+  overflow: hidden;
+  width: 600px;
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  box-shadow: 3px 3px 9px rgba(0,0,0,0.5);
+}
+/* .examScheduleDataTable label {
+  color: #fff;
+  background:-moz-linear-gradient(left,#000099,#000099,#000099);
+  background:-webkit-linear-gradient(left,#000099,#000099,#000099);
+  background:-o-linear-gradient(left,#000099,#000099,#000099);
+  background:-ms-linear-gradient(left,#000099,#000099,#000099);
+  background-:linear-gradient(left,#000099,#000099,#000099);
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0px;
+  text-align: center;
+  font-size: 100%; 
+  padding-top: .3em; 
+  padding-right: .25em; 
+  white-space: nowrap;
+  text-shadow: 1px 1px 4px black;
+  box-shadow: 5px 5px 1px rgba(0,0,0,0.5);
+
+} */
+ .examScheduleDataTable  tr:nth-child(even) {
+ background: #ebf9eb
+ }
+ .examScheduleDataTable tr:nth-child(odd) {
+ background: #d7f4d7
+ } 
+
+/*****************************************Change Password**************************/
+
+/*  .changePassword { 
+	clear:none;
+	text-align:left;
+	background-color:#fff;
+}
+
+.changePasswordTable {
+  border: 1px solid #c6c7cc;
+  boder-spacing: 0px;
+  border-collapse: collapse;
+  border-radius: 8px;
+  font: 14px/1.4 Times New Roman, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  overflow: hidden;
+  width: 600px;
+  margin: 0 auto;
+  color:black;
+  background-color:#EFEAFC;
+  margin-bottom:10px;
+  box-shadow: 3px 3px 9px rgba(0,0,0,0.5);
+}
+ .changePasswordTable th{
+	background-color: #009999;
+	box-shadow: 8px 8px 1px rgba(0,0,0,0.2);
+ } 
+
+.changePasswordTable label{
+  color: #fff; 
+  background:-moz-linear-gradient(left,#000099,#000099,#000099);
+  background:-webkit-linear-gradient(left,#000099,#000099,#000099);
+  background:-o-linear-gradient(left,#000099,#000099,#000099);
+  background:-ms-linear-gradient(left,#000099,#000099,#000099);
+  background-:linear-gradient(left,#000099,#000099,#000099);   
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0px;
+  text-align: right;
+  font-size: 100%; 
+  padding-top: .3em; 
+  padding-right: .25em;
+  box-shadow: 3px 3px 9px rgba(0,0,0,0.9);
+  text-shadow: 1px 1px 4px black;
+} 
+.changePasswordTable td{
+  border: 1px solid #fff;
+  boder-spacing: 0px;
+  border-collapse: collapse;
+  width:150px;
+  padding-left:15px;
+} */
+  
+/*****************************************Message**********************************/
+.messages {
+	height: 50px;
+	background-color: #cc33ff;
+		/* Internet Explorer 10 */
+	display:-ms-flexbox;
+	-ms-flex-pack:center;
+	-ms-flex-align:center;
+	
+	/* Firefox */
+	display:-moz-box;
+	-moz-box-pack:center;
+	-moz-box-align:center;
+	
+	/* Safari, Opera, and Chrome */
+	display:-webkit-box;
+	-webkit-box-pack:center;
+	-webkit-box-align:center;
+	
+	/* W3C */
+	display:box;
+	box-pack:center;
+	box-align:center;    
+}
+
+ .messagesTable {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font: 14px/1.4 Times New Roman, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  overflow: hidden;
+	width:1000px;
+   margin: 0 auto;
+   background-color:#fff;
+   margin-bottom:10px;
+   box-shadow: 3px 3px 9px rgba(0,0,0,0.5);
+
+}
+ .messagesTable th{
+	background-color:#cc33ff;
+	box-shadow: 8px 8px 1px rgba(0,0,0,0.2);	
+
+ } 
+  .messagesArea {
+  font: 14px/1.4 Times New Roman, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  overflow: hidden;
+	width:380px;
+   margin: 0 auto;
+   background-color:#fff;
+   margin-bottom:10px;
+}
+ .messagesUsers{
+	width:200px;
+	text-align:center;
+	vertical-align: top;
+	color:#fff;
+	background-color:#33cc00; 
+	font: 14px/1.5 Times New Roman, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight:bold;
+	box-shadow: 8px 8px 1px rgba(204,204,204,0.2);
+}
+.messagesAreaHeader{
+	text-align:center;
+	color:#fff;
+	background-color:#FF4700;
+	font: 15px/1.5 Times New Roman, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight:bold;
+	box-shadow: 8px 8px 1px rgba(204,204,204,0.9);
+}
+.usersList{
+	vertical-align:top;
+}
+  .messageTo {
+ 	text-align: center;
+ 	color:#000;
+
+
+	font: 15px/1.5 Times New Roman, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight:bold;
+
+ }
+.messagesSender{
+	float:right;
+	text-align:left;
+	color:#000;
+	background-color:#99ccff;
+	font: 15px/1.5 Times New Roman, "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+	margin-bottom: 10px;
+	width:300px;
+	white-space:pre;
+}
+.messagesRecepient{
+	float:left;
+	text-align:left;
+	color:#000;
+	background-color:#ccc;
+	font: 15px/1.5 Times New Roman, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	margin-bottom: 10px;
+	width:300px;
+	white-space:pre;
+}
+  .messageBox {
+ text-align: center;
+ }
+   .messageDate {
+ text-align: center;
+ color:#ccc;
+ font: 12px/1.5 Times New Roman, "Helvetica Neue", Helvetica, Arial, sans-serif;
+ }
+    .messageTime {
+ text-align: center;
+ color:#ccc;
+ font: 12px/1.5 Times New Roman, "Helvetica Neue", Helvetica, Arial, sans-serif;
+ }
+ 
+      .TeachersInConversation {
+ text-align: center;
+ color:#fff;
+ background-color:#834099;
+ font: 17px/1.5 Times New Roman, "Helvetica Neue", Helvetica, Arial, sans-serif;
+ }
+     .AllTeachers {
+ text-align: center;
+ color:#fff;
+ background-color:#834099;
+ font: 17px/1.5 Times New Roman, "Helvetica Neue", Helvetica, Arial, sans-serif;
+ }
+ 
+     .StudentsInConversation {
+ text-align: center;
+ color:#fff;
+ background-color:#834099;
+ font: 17px/1.5 Times New Roman, "Helvetica Neue", Helvetica, Arial, sans-serif;
+ }
+     .AllClassStudents {
+ text-align: center;
+ color:#fff;
+ background-color:#834099;
+ font: 17px/1.5 Times New Roman, "Helvetica Neue", Helvetica, Arial, sans-serif;
+ }
+      .usersSeparator {
+ background-color:#ccc;
+ width:0.1px;
+ }
+ .allTeachers {
+	height:150px;
+ 	overflow: auto;
+ }
+ .newMessagesSign{
+	float:auto;
+	clear:none;
+	text-align:center;
+	color:#fff;
+	font: 11px/1 Times New Roman, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	display:inline;
+	position:absolute;
+    border-radius: 50%;
+    behavior: url(PIE.htc); /* remove if you don't care about IE8 */
+    width: 16px;
+    height: 16px;
+    background: red;
+    border: 3px solid red;
+}
+/***********************************************************************************
+ /****************************************Sign-Out*********************************/
+ .signOut {
+
+	height: 50px;
+	background-color: #66ff33;
+		/* Internet Explorer 10 */
+	display:-ms-flexbox;
+	-ms-flex-pack:center;
+	-ms-flex-align:center;
+	
+	/* Firefox */
+	display:-moz-box;
+	-moz-box-pack:center;
+	-moz-box-align:center;
+	
+	/* Safari, Opera, and Chrome */
+	display:-webkit-box;
+	-webkit-box-pack:center;
+	-webkit-box-align:center;
+	
+	/* W3C */
+	display:box;
+	box-pack:center;
+	box-align:center;    
+}
+ 
+/**************************************************************************************/
+/* table th {
+
+   color: white;
+   padding: 8px;
+   display: table-cell;
+   vertical-align: inherit;
+   font-weight: bold;
+   text-align: center;
+   border-width: 0px;
+   border-style: solid;
+   border-color: #666666;
+   font:bold 18px/1.1em Arial, Helvetica, Sans-Serif;
+   text-shadow: 1px 1px 4px black;
+   letter-spacing:0.3em; 
+  box-shadow: 8px 8px 1px rgba(0,0,0,0.9);
+	
+    }
+       
+table td {
+vertical-align: text-top;
+
+ } 
+ 
+ a.fileLink:link {
+    color: orange;
+	text-decoration:underline;
+	font: 15px/1.4 Time New Roman, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: bold;
+}
+ a.fileLink:hover {
+    color: #d35f77;    
+}
+ a.fileLink:visited {
+    color: orange;    
+}
+ 
+input[type="button"]:enabled {
+  color: #fff;
+  background:#0cacd7; 
+  border-radius: 10px;
+  font: 17px/1 Times New Roman, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 0;
+ 
+  -webkit-transition: background 0.25s linear;
+  -moz-transition: background 0.25s linear;
+  -ms-transition: background 0.25s linear;
+  -o-transition: background 0.25s linear;
+  transition: background 0.25s linear;
+}
+input[type="button"]:hover:enabled{
+  color: #fff;
+  background:#0987a9; 
+  border-radius: 10px;
+  font: 17px/1 Times New Roman, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 0;
+
+}
+input[type="submit"]:enabled {
+  color: #fff;
+  background:#0cacd7; 
+  border-radius: 10px;
+  font: 17px/1 Times New Roman, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 0;
+ 
+  -webkit-transition: background 0.25s linear;
+  -moz-transition: background 0.25s linear;
+  -ms-transition: background 0.25s linear;
+  -o-transition: background 0.25s linear;
+  transition: background 0.25s linear;
+}
+input[type="submit"]:hover:enabled{
+  color: #fff;
+  background:#0987a9; 
+  border-radius: 10px;
+  font: 17px/1 Times New Roman, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 0;
+
+}
+.largeButton
+{
+	width: 300px;
+}
+
+.mediumButton
+{
+	width: 200px;
+}
+
+.smallButton{
+	width: 100px;
+}
+
+  .submitHolder {
+ text-align: center;
+ }
+
+textarea {
+  border-radius: 5px;
+  font: 14px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 0;
+  width: 300px;
+  height: 150px;
+
+} */
+   .buttonHolder {
+ text-align: center;
+ }
+/***************************************************************************************************************/
+.message{
+
+  text-align:center;
+  vertical-align: middle;
+   width:600px;
+   min-height: 120px;
+   line-height: 100px;
+   margin: 0 auto;
+   font: 14px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif;
+   color:#000;
+	/* Internet Explorer 10 */
+	display:-ms-flexbox;
+	-ms-flex-pack:center;
+	-ms-flex-align:center;
+	
+	/* Firefox */
+	display:-moz-box;
+	-moz-box-pack:center;
+	-moz-box-align:center;
+	
+	/* Safari, Opera, and Chrome */
+	display:-webkit-box;
+	-webkit-box-pack:center;
+	-webkit-box-align:center;
+	
+	/* W3C */
+	display:box;
+	box-pack:center;
+	box-align:center;
+
+ }
+ .messageHeader{
+
+  text-align:center;
+  vertical-align: middle;
+   background-color:#0887aa;
+   width:600px;
+   height: 30px;
+   line-height: 100px;
+   margin: 0 auto;
+   margin-top: 100px;
+   font: 20px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-weight: bold;
+   color:#fff;
+     border: 1px solid #c6c7cc;
+  border-radius: 0px;
+    border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+	/* Internet Explorer 10 */
+	display:-ms-flexbox;
+	-ms-flex-pack:center;
+	-ms-flex-align:center;
+	
+	/* Firefox */
+	display:-moz-box;
+	-moz-box-pack:center;
+	-moz-box-align:center;
+	
+	/* Safari, Opera, and Chrome */
+	display:-webkit-box;
+	-webkit-box-pack:center;
+	-webkit-box-align:center;
+	
+	/* W3C */
+	display:box;
+	box-pack:center;
+	box-align:center;
+
+ }
+ 
+ 
+/*************************************Overlay***********************************************/
+#overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 200;
+    cursor: pointer;
+}
+
+#text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 50px;
+    color: white;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+}
+/**********************************************************File Upload*******************************************************************************/
+
+.controls input[type="file"] {
+    display: none;
+}
+ .upload{
+  display: none;
+ }
+#file-selected{
+	color: blue;
+	font: 14px/1 Times New Roman, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: bold;
+}
+
+#custom-file-upload {
+  border: 1px solid #ccc;
+  padding: 0px 0px;
+  cursor: pointer;
+  width: 200px;
+  height: 200px; 
+  color: white;   
+/*   background: linear-gradient(to bottom, #ff4d4d 0%, #ff0000  50%, #660000 100%); 
+  background: -moz-linear-gradient(#ff4d4d 0%, #ff0000 50%, #660000 100%); 
+  background: -webkit-linear-gradient(#ff4d4d 0% #ff0000 50% #660000 100%); */    
+  background: linear-gradient(to bottom, #97d55d 0%, #76c031 50%, #4b7a1f 100%); 
+  background: -moz-linear-gradient(#ff4d4d 0%, #ff0000 50%, #660000 100%); 
+  background: -webkit-linear-gradient(#ff4d4d 0% #ff0000 50% #660000 100%);  
+  background-image: url("../images/Add_Photo.jpg") ;
+  background-size: 200px;
+  background-repeat: no-repeat; 
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0px;
+  text-align: left;
+  font-size: 100%; 
+/*   padding-top: .3em; 
+  padding-right: .25em; */
+  box-shadow: 3px 3px 9px rgba(0,0,0,0.9);
+  text-shadow: 1px 1px 4px black;
+  border-radius: 5px;
+}
+
+#custom-file-upload-logo {
+  border: 1px solid #ccc;
+  padding: 0px 0px;
+  cursor: pointer;
+  width: 200px;
+  height: 200px; 
+  color: white;   
+/*   background: linear-gradient(to bottom, #ff4d4d 0%, #ff0000  50%, #660000 100%); 
+  background: -moz-linear-gradient(#ff4d4d 0%, #ff0000 50%, #660000 100%); 
+  background: -webkit-linear-gradient(#ff4d4d 0% #ff0000 50% #660000 100%); */    
+  background: linear-gradient(to bottom, #97d55d 0%, #76c031 50%, #4b7a1f 100%); 
+  background: -moz-linear-gradient(#ff4d4d 0%, #ff0000 50%, #660000 100%); 
+  background: -webkit-linear-gradient(#ff4d4d 0% #ff0000 50% #660000 100%);  
+  background-image: url("../images/Add_Photo.jpg") ;
+  background-size: 200px;
+  background-repeat: no-repeat; 
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0px;
+  text-align: left;
+  font-size: 100%; 
+/*   padding-top: .3em; 
+  padding-right: .25em; */
+  box-shadow: 3px 3px 9px rgba(0,0,0,0.9);
+  text-shadow: 1px 1px 4px black;
+  border-radius: 5px;
+}
+
+.progress { position:relative; width:400px; border: 1px solid #ddd; padding: 1px; border-radius: 3px; }
+.bar { background-color: #ff9900; width:0%; height:15px; border-radius: 3px; }
+.percentDownload { position:absolute; display:inline-block; top:3px; left:48%; }
+/*****************************************************************************************************************************************************/
+
+/**************************************************************Image Rotation Classes********************************************************************/
+.rotate-90 {
+  -moz-transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.rotate-180 {
+  -moz-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.rotate-270 {
+  -moz-transform: rotate(270deg);
+  -webkit-transform: rotate(270deg);
+  -o-transform: rotate(270deg);
+  transform: rotate(270deg);
+}
+.rotate-360 {
+   -moz-transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+.flip {
+  -moz-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+.flip-and-rotate-90 {
+  -moz-transform: rotate(90deg) scaleX(-1);
+  -webkit-transform: rotate(90deg) scaleX(-1);
+  -o-transform: rotate(90deg) scaleX(-1);
+  transform: rotate(90deg) scaleX(-1);
+}
+
+.flip-and-rotate-180 {
+  -moz-transform: rotate(180deg) scaleX(-1);
+  -webkit-transform: rotate(180deg) scaleX(-1);
+  -o-transform: rotate(180deg) scaleX(-1);
+  transform: rotate(180deg) scaleX(-1);
+}
+
+.flip-and-rotate-270 {
+  -moz-transform: rotate(270deg) scaleX(-1);
+  -webkit-transform: rotate(270deg) scaleX(-1);
+  -o-transform: rotate(270deg) scaleX(-1);
+  transform: rotate(270deg) scaleX(-1);
+}
+/**********************************************************************************************************************************************************/
